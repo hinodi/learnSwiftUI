@@ -67,10 +67,47 @@ struct Challenge1: View {
     }
 }
 
+struct Challenge2: View {
+    var body: some View {
+        ZStack {
+            Image("Breakfast")
+                .resizable()
+                .edgesIgnoringSafeArea(.vertical)
+            VStack {
+                Image("TopGradient")
+                    .resizable()
+                    .edgesIgnoringSafeArea(.top)
+                Image("BottomGradient")
+                    .resizable()
+                    .edgesIgnoringSafeArea(.bottom)
+            }
+            VStack {
+                HStack(alignment: .top, content: {
+                    Text("Hardcore\nAvo Toast")
+                        .font(.largeTitle)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .padding([.top, .leading, .trailing])
+                    Spacer()
+                    Image("Heart_health")
+                        .padding([.top, .leading, .trailing])
+                })
+                Spacer()
+                Text("Energize with this healthy and hearty breakfast")
+                    .font(.subheadline)
+                    .fontWeight(.regular)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, 40)
+            }
+        }
+    }
+}
+
 
 struct ContentView: View {
     var body: some View {
-        Challenge1()
+        Challenge2()
     }
 }
 
