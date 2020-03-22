@@ -104,10 +104,47 @@ struct Challenge2: View {
     }
 }
 
+struct Challenge3: View {
+    
+    @State var counter = 0
+    
+    var body: some View {
+        VStack {
+            Text(String(counter))
+                .font(.system(size: 100, weight: .heavy))
+                .padding(40)
+            
+            HStack {
+                Button(action: {
+                    self.counter = 0
+                }) {
+                    Image(systemName: "gobackward")
+                        .font(.system(size: 40, weight: .heavy))
+                        .padding(30)
+                }
+                Button(action: {
+                    self.counter -= 1
+                }) {
+                     Image(systemName: "minus")
+                        .font(.system(size: 40, weight: .heavy))
+                        .padding(30)
+                }
+                Button(action: {
+                    self.counter += 1
+                }) {
+                     Image(systemName: "plus")
+                        .font(.system(size: 40, weight: .heavy))
+                        .padding(30)
+                }
+            }
+        }
+    }
+}
+
 
 struct ContentView: View {
     var body: some View {
-        Challenge2()
+        Challenge3()
     }
 }
 
