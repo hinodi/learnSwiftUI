@@ -13,6 +13,7 @@
 		15806F602427458900BCEC5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15806F5F2427458900BCEC5E /* Assets.xcassets */; };
 		15806F632427458900BCEC5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15806F622427458900BCEC5E /* Preview Assets.xcassets */; };
 		15806F662427458900BCEC5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15806F642427458900BCEC5E /* LaunchScreen.storyboard */; };
+		15AD1151242825E300774FA3 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AD1150242825E300774FA3 /* ListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		15806F622427458900BCEC5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		15806F652427458900BCEC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15806F672427458900BCEC5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15AD1150242825E300774FA3 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				15806F642427458900BCEC5E /* LaunchScreen.storyboard */,
 				15806F672427458900BCEC5E /* Info.plist */,
 				15806F612427458900BCEC5E /* Preview Content */,
+				15AD1150242825E300774FA3 /* ListItemView.swift */,
 			);
 			path = learnSwiftUi;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				15806F5A2427458500BCEC5E /* AppDelegate.swift in Sources */,
 				15806F5C2427458500BCEC5E /* SceneDelegate.swift in Sources */,
 				15806F5E2427458500BCEC5E /* ContentView.swift in Sources */,
+				15AD1151242825E300774FA3 /* ListItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

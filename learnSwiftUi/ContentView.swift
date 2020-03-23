@@ -142,14 +142,11 @@ struct Challenge3: View {
 }
 
 struct Challenge4: View {
-    let LIST_IMAGES = ["star", "apple", "cherry"]
-    let BET_AMOUNTS = 5
-    
+    let BET_AMOUNTS = 10
     @State var credits = 1000
     
-    @State var imageIndex1 = 0
-    @State var imageIndex2 = 1
-    @State var imageIndex3 = 2
+    @State private var listImages = ["star", "apple", "cherry"]
+    @State var imageIndexs = [0, 1, 2, 1, 0, 2, 2, 0, 1]
     
     var body: some View {
         ZStack {
@@ -181,46 +178,32 @@ struct Challenge4: View {
                     .background(Color.white.opacity(0.5))
                     .cornerRadius(20)
                 Spacer()
+                
                 HStack {
                     Spacer()
-                    Image(self.LIST_IMAGES[imageIndex1])
-                        .resizable()
-                        .aspectRatio(1, contentMode: .fit)
-                        .background(Color.white.opacity(0.5))
-                        .cornerRadius(20)
-                    Image(self.LIST_IMAGES[imageIndex2])
-                        .resizable()
-                        .aspectRatio(1, contentMode: .fit)
-                        .background(Color.white.opacity(0.5))
-                        .cornerRadius(20)
-                    Image(self.LIST_IMAGES[imageIndex3])
-                        .resizable()
-                        .aspectRatio(1, contentMode: .fit)
-                        .background(Color.white.opacity(0.5))
-                        .cornerRadius(20)
+                    ListItemView(imageName: $listImages[imageIndexs[0]])
+                    ListItemView(imageName: $listImages[imageIndexs[1]])
+                    ListItemView(imageName: $listImages[imageIndexs[2]])
                     Spacer()
                 }
+                HStack {
+                    Spacer()
+                    ListItemView(imageName: $listImages[imageIndexs[3]])
+                    ListItemView(imageName: $listImages[imageIndexs[4]])
+                    ListItemView(imageName: $listImages[imageIndexs[5]])
+                    Spacer()
+                }
+                HStack {
+                    Spacer()
+                    ListItemView(imageName: $listImages[imageIndexs[6]])
+                    ListItemView(imageName: $listImages[imageIndexs[7]])
+                    ListItemView(imageName: $listImages[imageIndexs[8]])
+                    Spacer()
+                }
+                
                 Spacer()
                 Button(action: {
-                    self.credits -= self.BET_AMOUNTS * 4
-                    
-                    let imageIndex1 = Int.random(in: 0 ... self.LIST_IMAGES.count - 1)
-                    let imageIndex2 = Int.random(in: 0 ... self.LIST_IMAGES.count - 1)
-                    let imageIndex3 = Int.random(in: 0 ... self.LIST_IMAGES.count - 1)
-                    
-                    if (imageIndex1 == imageIndex2 && imageIndex2 == imageIndex3) {
-                        self.credits += self.BET_AMOUNTS * 8
-                    } else if (imageIndex1 == imageIndex2) {
-                        self.credits += self.BET_AMOUNTS
-                    } else if (imageIndex2 == imageIndex3) {
-                        self.credits += self.BET_AMOUNTS
-                    } else if (imageIndex3 == imageIndex1) {
-                        self.credits += self.BET_AMOUNTS
-                    }
-                    
-                    self.imageIndex1 = imageIndex1
-                    self.imageIndex2 = imageIndex2
-                    self.imageIndex3 = imageIndex3
+                    self.funcCheckWin()
                 }) {
                     Text("Spin")
                         .bold()
@@ -233,6 +216,29 @@ struct Challenge4: View {
                 Spacer()
             }
         }
+    }
+    
+    func funcCheckWin () {
+        self.credits -= self.BET_AMOUNTS
+        
+        self.imageIndexs = self.imageIndexs.map {_ in
+            Int.random(in: 0 ... self.listImages.count - 1)
+        }
+        
+        let winRow1 = checkWinRow(0, 1, 2)
+        let winRow2 = checkWinRow(3, 4, 5)
+        let winRow3 = checkWinRow(6, 7, 8)
+        if (winRow1 && winRow2 && winRow3) {
+            self.credits += self.BET_AMOUNTS * 6
+        } else if ((winRow1 && winRow2) || (winRow1 && winRow3) || (winRow2 && winRow3)) {
+            self.credits += self.BET_AMOUNTS * 4
+        } else if (winRow1 || winRow2 || winRow3) {
+            self.credits += self.BET_AMOUNTS * 2
+        }
+    }
+    
+    func checkWinRow(_ i1:Int, _ i2:Int, _ i3: Int) -> Bool {
+        return self.imageIndexs[i1] == self.imageIndexs[i2] && self.imageIndexs[i1] == self.imageIndexs[i3]
     }
 }
 
