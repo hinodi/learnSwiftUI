@@ -264,9 +264,41 @@ struct Challenge5: View {
     }
 }
 
+struct Challenge6: View {
+    @State var listPositons = [-150, 0, 150]
+    @State var listZIndex = [1, 2, 3]
+    @State var listScales = [0.8, 0.9, 1]
+    @State var i1 = 0
+    @State var i2 = 1
+    @State var i3 = 2
+    
+    var body: some View {
+        ZStack {
+            CardView(color: .red, label: "Red")
+                .offset(x: 0, y: CGFloat(listPositons[i1]))
+                .scaleEffect(CGFloat(listScales[i1]))
+                .zIndex(Double(listZIndex[i1]))
+            CardView(color: .green, label: "Green")
+                .offset(x: 0, y: CGFloat(listPositons[i2]))
+                .scaleEffect(CGFloat(listScales[i2]))
+                .zIndex(Double(listZIndex[i2]))
+            CardView(color: .blue, label: "Blue")
+                .offset(x: 0, y: CGFloat(listPositons[i3]))
+                .scaleEffect(CGFloat(listScales[i3]))
+                .zIndex(Double(listZIndex[i3]))
+        }
+        .onTapGesture {
+                self.i1 = (self.i1 + 1) % 3
+                self.i2 = (self.i2 + 1) % 3
+                self.i3 = (self.i3 + 1) % 3
+        }
+        .animation(.spring())
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        Challenge5()
+        Challenge6()
     }
 }
 
