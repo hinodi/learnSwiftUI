@@ -242,9 +242,31 @@ struct Challenge4: View {
     }
 }
 
+struct Challenge5: View {
+    @State var anim = false
+    
+    var body: some View {
+        ZStack {
+            CardView(color: .red, label: "Red")
+                .offset(x: 0, y: anim ? -220 : 20)
+                .scaleEffect(anim ? 1 : 0.8)
+            CardView(color: .blue, label: "Blue")
+                .offset(x: 0, y: anim ? -50 : 40)
+                .scaleEffect(anim ? 1 : 0.9)
+            
+            CardView(color: .black, label: "Tap me")
+                .offset(x: 0, y: anim ? 200 : 60)
+                .onTapGesture {
+                    self.anim.toggle()
+            }
+        }
+        .animation(.spring())
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        Challenge4()
+        Challenge5()
     }
 }
 
