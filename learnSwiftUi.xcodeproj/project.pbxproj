@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1519CEE324290C7A00C6A0C6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519CEE224290C7A00C6A0C6 /* CardView.swift */; };
+		1548E180243639A100F57907 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1548E17F243639A100F57907 /* Data.swift */; };
+		1548E18224363F1000F57907 /* FirstTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1548E18124363F1000F57907 /* FirstTab.swift */; };
+		1548E18424363F5C00F57907 /* SecondTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1548E18324363F5C00F57907 /* SecondTab.swift */; };
 		15806F5A2427458500BCEC5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15806F592427458500BCEC5E /* AppDelegate.swift */; };
 		15806F5C2427458500BCEC5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15806F5B2427458500BCEC5E /* SceneDelegate.swift */; };
 		15806F5E2427458500BCEC5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15806F5D2427458500BCEC5E /* ContentView.swift */; };
@@ -19,6 +22,9 @@
 
 /* Begin PBXFileReference section */
 		1519CEE224290C7A00C6A0C6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		1548E17F243639A100F57907 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		1548E18124363F1000F57907 /* FirstTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTab.swift; sourceTree = "<group>"; };
+		1548E18324363F5C00F57907 /* SecondTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTab.swift; sourceTree = "<group>"; };
 		15806F562427458500BCEC5E /* learnSwiftUi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learnSwiftUi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15806F592427458500BCEC5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15806F5B2427458500BCEC5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +75,9 @@
 				15806F612427458900BCEC5E /* Preview Content */,
 				15AD1150242825E300774FA3 /* ListItemView.swift */,
 				1519CEE224290C7A00C6A0C6 /* CardView.swift */,
+				1548E17F243639A100F57907 /* Data.swift */,
+				1548E18124363F1000F57907 /* FirstTab.swift */,
+				1548E18324363F5C00F57907 /* SecondTab.swift */,
 			);
 			path = learnSwiftUi;
 			sourceTree = "<group>";
@@ -153,8 +162,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				15806F5A2427458500BCEC5E /* AppDelegate.swift in Sources */,
+				1548E18224363F1000F57907 /* FirstTab.swift in Sources */,
+				1548E180243639A100F57907 /* Data.swift in Sources */,
 				15806F5C2427458500BCEC5E /* SceneDelegate.swift in Sources */,
 				15806F5E2427458500BCEC5E /* ContentView.swift in Sources */,
+				1548E18424363F5C00F57907 /* SecondTab.swift in Sources */,
 				15AD1151242825E300774FA3 /* ListItemView.swift in Sources */,
 				1519CEE324290C7A00C6A0C6 /* CardView.swift in Sources */,
 			);

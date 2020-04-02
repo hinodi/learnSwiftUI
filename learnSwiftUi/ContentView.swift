@@ -296,14 +296,31 @@ struct Challenge6: View {
     }
 }
 
+struct Challenge7: View {    
+    var body: some View {
+        TabView {
+            FirstTab()
+                .tabItem {
+                    Image(systemName: "1.square.fill")
+                    Text("First")
+                }
+            SecondTab()
+                .tabItem {
+                    Image(systemName: "2.square.fill")
+                    Text("Second")
+                }
+        }
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        Challenge6()
+        Challenge7()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(Data())
     }
 }
